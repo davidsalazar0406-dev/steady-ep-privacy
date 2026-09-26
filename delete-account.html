@@ -3,149 +3,368 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050706">
+
   <title>Eliminación de cuenta | Steady EP</title>
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg:#050706;
+      --card:#0d110f;
+      --border:#202a24;
+      --green:#55e889;
+      --green-soft:rgba(85,232,137,.10);
+      --text:#ffffff;
+      --muted:#a7b0aa;
+      --body:#d7ded9;
     }
+
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      background: #0b0d0c;
-      color: #f4f7f5;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      margin:0;
+      background:
+        radial-gradient(circle at 50% -10%,
+        rgba(85,232,137,.10),transparent 28%),
+        var(--bg);
+      color:var(--text);
+      font-family:
+        Inter,-apple-system,BlinkMacSystemFont,
+        "Segoe UI",Arial,sans-serif;
+      line-height:1.7;
     }
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 22px 80px;
+    .container {
+      width:min(100% - 36px,900px);
+      margin:0 auto;
     }
 
-    h1 {
-      color: #ffffff;
-      font-size: 36px;
-      margin-bottom: 8px;
+    header {
+      padding:28px 0;
+      border-bottom:1px solid #151b17;
     }
 
-    h2 {
-      color: #55e889;
-      margin-top: 38px;
-    }
-
-    p,
-    li {
-      color: #d7ded9;
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
     }
 
     .brand {
-      color: #55e889;
-      font-weight: 700;
+      font-weight:800;
+      letter-spacing:.4px;
+    }
+
+    .brand span { color:var(--green); }
+
+    .back {
+      color:var(--green);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    main {
+      padding:65px 0 90px;
+    }
+
+    .badge {
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--green-soft);
+      border:1px solid rgba(85,232,137,.22);
+      color:var(--green);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    h1 {
+      margin:18px 0 10px;
+      font-size:clamp(38px,7vw,58px);
+      line-height:1.05;
+      letter-spacing:-2px;
     }
 
     .updated {
-      color: #9ba6a0;
-      margin-bottom: 36px;
+      color:var(--muted);
+      margin-bottom:38px;
+    }
+
+    .intro,
+    .card {
+      padding:23px;
+      border:1px solid var(--border);
+      border-radius:20px;
+      background:linear-gradient(
+        145deg,
+        rgba(18,24,20,.95),
+        rgba(9,12,10,.95)
+      );
+    }
+
+    .intro {
+      margin-bottom:42px;
+    }
+
+    h2 {
+      margin-top:46px;
+      color:var(--green);
+      font-size:23px;
+    }
+
+    p, li {
+      color:var(--body);
+    }
+
+    li {
+      margin-bottom:10px;
+    }
+
+    strong {
+      color:#fff;
     }
 
     a {
-      color: #55e889;
+      color:var(--green);
     }
 
     .card {
-      background: #131714;
-      border: 1px solid #29322c;
-      border-radius: 16px;
-      padding: 22px;
-      margin-top: 24px;
+      margin-top:22px;
     }
 
     .important {
-      border-left: 4px solid #55e889;
+      border-color:rgba(85,232,137,.32);
+      background:var(--green-soft);
+    }
+
+    .button {
+      display:inline-block;
+      margin-top:8px;
+      padding:13px 18px;
+      border-radius:12px;
+      background:var(--green);
+      color:#050706;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    footer {
+      padding:30px 0 45px;
+      border-top:1px solid #151b17;
+      color:#77817b;
+      font-size:13px;
+    }
+
+    @media(max-width:600px) {
+      main { padding-top:45px; }
+      h1 { letter-spacing:-1.3px; }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <h1>Eliminación de cuenta</h1>
 
-    <p class="brand">Steady EP</p>
+<header>
+  <div class="container nav">
+    <div class="brand">STEADY <span>EP</span></div>
+    <a class="back" href="index.html">← Centro Legal</a>
+  </div>
+</header>
 
-    <p class="updated">
-      Última actualización: 23 de septiembre de 2026
+<main class="container">
+
+  <span class="badge">CUENTA Y DATOS · STEADY EP</span>
+
+  <h1>Eliminación de cuenta</h1>
+
+  <p class="updated">
+    Última actualización: 26 de septiembre de 2026
+  </p>
+
+  <div class="intro">
+    Esta página explica cómo puedes iniciar o solicitar la
+    eliminación de tu cuenta de <strong>Steady EP</strong>
+    y de los datos asociados a ella.
+  </div>
+
+  <h2>1. Eliminar tu cuenta desde Steady EP</h2>
+
+  <p>
+    Si tienes acceso a tu cuenta, puedes iniciar el proceso
+    directamente desde la aplicación.
+  </p>
+
+  <div class="card">
+    <ol>
+      <li>Inicia sesión en Steady EP.</li>
+      <li>Abre tu perfil.</li>
+      <li>Accede a Configuración o a las opciones de tu cuenta.</li>
+      <li>Busca la opción de eliminación de cuenta.</li>
+      <li>
+        Revisa la información mostrada antes de continuar.
+      </li>
+      <li>
+        Confirma la solicitud cuando Steady EP lo solicite.
+      </li>
+    </ol>
+  </div>
+
+  <h2>2. Si no puedes acceder a tu cuenta</h2>
+
+  <p>
+    Si no puedes acceder a Steady EP, puedes solicitar la
+    eliminación mediante nuestro canal de contacto.
+  </p>
+
+  <div class="card important">
+
+    <strong>Solicitud de eliminación</strong>
+
+    <p>
+      Envía un correo indicando que deseas eliminar tu cuenta
+      de Steady EP.
+    </p>
+
+    <a
+      class="button"
+      href="mailto:steadyep@gmail.com?subject=Solicitud%20de%20eliminación%20de%20cuenta%20Steady%20EP">
+      Solicitar por correo
+    </a>
+
+    <p>
+      Correo:
+      <a href="mailto:steadyep@gmail.com">
+        steadyep@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+  <h2>3. Verificación de la solicitud</h2>
+
+  <p>
+    Para proteger las cuentas frente a solicitudes no autorizadas,
+    Steady EP puede necesitar verificar razonablemente que la
+    solicitud corresponde al titular de la cuenta.
+  </p>
+
+  <p>
+    Si realizas la solicitud por correo, incluye la dirección de
+    correo electrónico asociada a tu cuenta. Podremos solicitar
+    información adicional cuando sea razonablemente necesaria
+    para verificar la solicitud.
+  </p>
+
+  <p>
+    No envíes contraseñas mediante correo electrónico.
+  </p>
+
+  <h2>4. Datos asociados a la cuenta</h2>
+
+  <p>
+    Cuando la eliminación sea procesada, los datos asociados a
+    la cuenta que deban eliminarse pueden incluir, según
+    corresponda:
+  </p>
+
+  <ul>
+    <li>Información del perfil.</li>
+    <li>Información de la cuenta.</li>
+    <li>Metas, Agenda y progreso asociados a la cuenta.</li>
+    <li>Publicaciones y contenido asociado.</li>
+    <li>Comentarios y otras interacciones asociadas.</li>
+    <li>
+      Otros datos vinculados a la cuenta cuya conservación
+      ya no sea necesaria.
+    </li>
+  </ul>
+
+  <h2>5. Información que puede conservarse</h2>
+
+  <p>
+    Determinada información puede conservarse cuando exista
+    una razón legítima u obligación legal aplicable.
+  </p>
+
+  <p>Esto puede incluir información necesaria para:</p>
+
+  <ul>
+    <li>Cumplir obligaciones legales.</li>
+    <li>Prevenir o investigar fraude y abuso.</li>
+    <li>Proteger la seguridad e integridad del servicio.</li>
+    <li>Resolver disputas o reclamaciones.</li>
+    <li>
+      Cumplir otras obligaciones de conservación aplicables.
+    </li>
+  </ul>
+
+  <p>
+    La información conservada por estos motivos se mantendrá
+    únicamente durante el periodo necesario o exigido,
+    según corresponda.
+  </p>
+
+  <h2>6. Contenido compartido con otras personas</h2>
+
+  <p>
+    La eliminación de una cuenta puede afectar al contenido
+    asociado a ella.
+  </p>
+
+  <p>
+    Sin embargo, determinada información puede requerir un
+    tratamiento diferente cuando forme parte de interacciones
+    con otros usuarios, registros de seguridad, obligaciones
+    legales u otras circunstancias aplicables.
+  </p>
+
+  <h2>7. Antes de eliminar tu cuenta</h2>
+
+  <div class="card">
+    <p>
+      La eliminación de una cuenta puede ser irreversible una vez
+      completada.
     </p>
 
     <p>
-      Esta página explica cómo los usuarios de Steady EP pueden
-      solicitar la eliminación de su cuenta y de los datos asociados
-      a ella.
+      Revisa cuidadosamente la información mostrada por Steady EP
+      antes de confirmar la solicitud.
     </p>
+  </div>
 
-    <h2>Eliminar tu cuenta desde Steady EP</h2>
+  <h2>8. Privacidad</h2>
 
-    <div class="card">
-      <p>
-        Si tienes acceso a tu cuenta, puedes iniciar el proceso de
-        eliminación directamente desde la aplicación Steady EP.
-      </p>
+  <p>
+    Para obtener más información sobre cómo Steady EP procesa
+    información, consulta nuestra
+    <a href="privacy.html">Política de Privacidad</a>.
+  </p>
 
-      <ol>
-        <li>Inicia sesión en tu cuenta de Steady EP.</li>
-        <li>Abre tu perfil.</li>
-        <li>Accede a las opciones o configuración de tu cuenta.</li>
-        <li>Selecciona la opción para eliminar tu cuenta.</li>
-        <li>Confirma la eliminación cuando la aplicación lo solicite.</li>
-      </ol>
-    </div>
+  <h2>9. Contacto</h2>
 
-    <h2>Solicitar la eliminación fuera de la aplicación</h2>
-
+  <div class="card">
     <p>
-      Si no puedes acceder a Steady EP, puedes solicitar la eliminación
-      de tu cuenta y de los datos asociados enviando un correo electrónico
-      a:
-    </p>
-
-    <div class="card important">
-      <p>
-        <strong>Correo electrónico:</strong>
-        <a href="mailto:steadyep@gmail.com?subject=Solicitud%20de%20eliminación%20de%20cuenta%20Steady%20EP">
-          steadyep@gmail.com
-        </a>
-      </p>
-
-      <p>
-        En el mensaje, indica que deseas eliminar tu cuenta de
-        Steady EP e incluye la dirección de correo electrónico
-        asociada a la cuenta para que podamos identificar la solicitud.
-      </p>
-    </div>
-
-    <h2>Datos asociados a la cuenta</h2>
-
-    <p>
-      Al procesarse la eliminación de una cuenta, se eliminarán los
-      datos asociados a ella que correspondan, como información de
-      perfil, contenido y otros datos vinculados a la cuenta.
+      Para preguntas relacionadas con eliminación de cuentas
+      o datos personales:
     </p>
 
     <p>
-      Determinada información podrá conservarse únicamente cuando sea
-      necesario para cumplir obligaciones legales, prevenir fraude,
-      resolver disputas o proteger la seguridad e integridad del
-      servicio.
+      <strong>Steady EP</strong><br>
+      <a href="mailto:steadyep@gmail.com">
+        steadyep@gmail.com
+      </a>
     </p>
+  </div>
 
-    <h2>Contacto</h2>
+</main>
 
-    <p>
-      Para preguntas relacionadas con la eliminación de cuentas o
-      datos personales, puedes contactar a Steady EP en
-      <a href="mailto:steadyep@gmail.com">steadyep@gmail.com</a>.
-    </p>
-  </main>
+<footer>
+  <div class="container">
+    © 2026 Steady EP · Cuenta y eliminación de datos
+  </div>
+</footer>
+
 </body>
 </html>
