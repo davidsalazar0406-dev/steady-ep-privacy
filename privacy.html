@@ -3,272 +3,519 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050706">
+
   <title>Política de Privacidad | Steady EP</title>
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #050706;
+      --card: #0d110f;
+      --border: #202a24;
+      --green: #55e889;
+      --green-soft: rgba(85,232,137,.10);
+      --text: #ffffff;
+      --muted: #a7b0aa;
+      --body: #d7ded9;
     }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: #0b0d0c;
-      color: #f4f7f5;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      background:
+        radial-gradient(circle at 50% -10%,
+        rgba(85,232,137,.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
     }
 
-    main {
-      max-width: 900px;
+    .container {
+      width: min(100% - 36px, 900px);
       margin: 0 auto;
-      padding: 48px 22px 80px;
     }
 
-    h1 {
-      color: #ffffff;
-      font-size: 36px;
-      margin-bottom: 8px;
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid #151b17;
     }
 
-    h2 {
-      color: #55e889;
-      margin-top: 38px;
-    }
-
-    p,
-    li {
-      color: #d7ded9;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
-      color: #55e889;
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+
+    .brand span { color: var(--green); }
+
+    .back {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
       font-weight: 700;
     }
 
-    .updated {
-      color: #9ba6a0;
-      margin-bottom: 36px;
+    main {
+      padding: 65px 0 90px;
     }
 
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      border: 1px solid rgba(85,232,137,.22);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(38px, 7vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .updated {
+      color: var(--muted);
+      margin-bottom: 38px;
+    }
+
+    .intro {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(18,24,20,.95),
+        rgba(9,12,10,.95)
+      );
+      color: var(--body);
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      margin-top: 46px;
+      color: var(--green);
+      font-size: 23px;
+    }
+
+    h3 {
+      margin-top: 28px;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    p, li {
+      color: var(--body);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong { color: #fff; }
+
     a {
-      color: #55e889;
+      color: var(--green);
     }
 
     .card {
-      background: #131714;
-      border: 1px solid #29322c;
-      border-radius: 16px;
       padding: 22px;
-      margin-top: 24px;
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 30px 0 45px;
+      border-top: 1px solid #151b17;
+      color: #77817b;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      main { padding-top: 45px; }
+      h1 { letter-spacing: -1.3px; }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <h1>Política de Privacidad</h1>
 
-    <p class="brand">Steady EP</p>
+<header>
+  <div class="container nav">
+    <div class="brand">STEADY <span>EP</span></div>
+    <a class="back" href="index.html">← Centro Legal</a>
+  </div>
+</header>
 
-    <p class="updated">
-      Última actualización: 23 de septiembre de 2026
+<main class="container">
+
+  <span class="badge">PRIVACIDAD · VERSIÓN 1.0</span>
+
+  <h1>Política de Privacidad</h1>
+
+  <p class="updated">
+    Fecha de publicación y última actualización:
+    26 de septiembre de 2026
+  </p>
+
+  <div class="intro">
+    Esta Política de Privacidad explica de forma general cómo
+    <strong>Steady EP</strong> recopila, utiliza, almacena y protege
+    información cuando utilizas nuestra aplicación y los servicios
+    relacionados con ella.
+    <br><br>
+    La información procesada dependerá de las funciones que decidas
+    utilizar y de los permisos que concedas.
+  </div>
+
+  <h2>1. Información que podemos recopilar</h2>
+
+  <h3>1.1 Información de cuenta y registro</h3>
+
+  <p>Puede incluir:</p>
+
+  <ul>
+    <li>Nombre y nombre de usuario.</li>
+    <li>Correo electrónico.</li>
+    <li>Foto de perfil y portada.</li>
+    <li>País o región.</li>
+    <li>Fecha de nacimiento.</li>
+    <li>
+      Número de teléfono cuando sea proporcionado
+      por el usuario.
+    </li>
+    <li>
+      Información opcional proporcionada durante
+      el registro o configuración del perfil.
+    </li>
+  </ul>
+
+  <h3>1.2 Contenido creado por el usuario</h3>
+
+  <p>
+    Dependiendo de las funciones utilizadas, podemos procesar:
+  </p>
+
+  <ul>
+    <li>Publicaciones.</li>
+    <li>Fotografías y videos.</li>
+    <li>Stories o historias.</li>
+    <li>Reels y otros formatos audiovisuales.</li>
+    <li>Notas.</li>
+    <li>Comentarios.</li>
+    <li>Descripciones y otra información publicada.</li>
+  </ul>
+
+  <h3>1.3 Información social</h3>
+
+  <p>Puede incluir información relacionada con:</p>
+
+  <ul>
+    <li>Seguidores y cuentas seguidas.</li>
+    <li>Solicitudes de seguimiento.</li>
+    <li>Likes y otras interacciones.</li>
+    <li>Comentarios.</li>
+    <li>Contenido guardado.</li>
+    <li>Interacciones con publicaciones y perfiles.</li>
+  </ul>
+
+  <h3>1.4 Mensajería</h3>
+
+  <p>
+    Cuando utilizas las funciones de comunicación de Steady EP,
+    podemos procesar los mensajes y archivos que envías mediante
+    dichas funciones con el fin de prestar el servicio.
+  </p>
+
+  <h3>1.5 Metas, Agenda y progreso</h3>
+
+  <p>
+    Steady EP puede almacenar información que decidas registrar
+    relacionada con:
+  </p>
+
+  <ul>
+    <li>Metas.</li>
+    <li>Agenda y actividades.</li>
+    <li>Planes y progreso.</li>
+    <li>Rachas.</li>
+    <li>Información relacionada con tu uso de estas funciones.</li>
+  </ul>
+
+  <h3>1.6 Cámara, fotografías, videos y archivos</h3>
+
+  <p>
+    Algunas funciones pueden solicitar acceso a la cámara,
+    fotografías, videos u otros archivos del dispositivo.
+    Dicho acceso dependerá de los permisos que concedas mediante
+    el sistema operativo de tu dispositivo.
+  </p>
+
+  <h3>1.7 Información técnica y de seguridad</h3>
+
+  <p>
+    Podemos procesar determinada información técnica cuando sea
+    necesaria para operar, diagnosticar, proteger y mejorar
+    Steady EP, prevenir abuso y mantener la seguridad del servicio.
+  </p>
+
+  <h2>2. Cómo utilizamos la información</h2>
+
+  <p>Podemos utilizar información para:</p>
+
+  <ul>
+    <li>Crear, autenticar y administrar cuentas.</li>
+    <li>Proporcionar las funciones de Steady EP.</li>
+    <li>Guardar y sincronizar contenido y progreso.</li>
+    <li>Permitir funciones sociales y de comunicación.</li>
+    <li>Gestionar opciones de privacidad.</li>
+    <li>
+      Enviar notificaciones y recordatorios relacionados
+      con las funciones habilitadas.
+    </li>
+    <li>
+      Detectar, prevenir e investigar fraude, abuso,
+      problemas técnicos o riesgos de seguridad.
+    </li>
+    <li>Gestionar reportes y medidas de seguridad.</li>
+    <li>Mantener y mejorar el funcionamiento del servicio.</li>
+    <li>Cumplir obligaciones legales aplicables.</li>
+  </ul>
+
+  <h2>3. Visibilidad del contenido</h2>
+
+  <p>
+    Algunas funciones de Steady EP permiten compartir información
+    con otros usuarios.
+  </p>
+
+  <p>
+    La visibilidad puede depender de la función utilizada,
+    la configuración disponible, el estado público o privado de
+    una cuenta y las decisiones realizadas por el usuario.
+  </p>
+
+  <p>
+    No toda la información almacenada mediante Steady EP es
+    necesariamente pública.
+  </p>
+
+  <h2>4. Proveedores de servicios</h2>
+
+  <p>
+    Steady EP puede utilizar proveedores tecnológicos para operar
+    determinadas partes del servicio, incluyendo servicios de
+    autenticación, infraestructura, bases de datos, almacenamiento,
+    distribución de aplicaciones y notificaciones.
+  </p>
+
+  <p>
+    Estos proveedores pueden procesar información cuando sea
+    necesario para prestar sus respectivos servicios, sujeto a sus
+    condiciones y obligaciones aplicables.
+  </p>
+
+  <p>
+    Entre los proveedores tecnológicos que Steady EP puede utilizar
+    se encuentran servicios de infraestructura y backend como
+    <strong>Supabase</strong>, así como servicios proporcionados
+    por las plataformas y sistemas operativos donde Steady EP
+    se distribuye o ejecuta.
+  </p>
+
+  <h2>5. Conservación de información</h2>
+
+  <p>
+    La información puede conservarse durante el tiempo necesario
+    para proporcionar el servicio, mantener la seguridad,
+    gestionar la cuenta y cumplir obligaciones legales aplicables.
+  </p>
+
+  <p>
+    Los periodos de conservación pueden variar dependiendo del
+    tipo de información, la finalidad del tratamiento y los
+    requisitos legales aplicables.
+  </p>
+
+  <h2>6. Eliminación de cuenta y datos</h2>
+
+  <p>
+    Los usuarios pueden utilizar las opciones disponibles en
+    Steady EP para iniciar o solicitar la eliminación de su cuenta,
+    cuando corresponda.
+  </p>
+
+  <p>
+    También ponemos a disposición información relacionada con
+    la eliminación de cuenta mediante nuestro Centro Legal.
+  </p>
+
+  <p>
+    Cuando una solicitud de eliminación es procesada, la información
+    asociada podrá eliminarse o conservarse únicamente cuando exista
+    una razón legítima u obligación legal aplicable que requiera
+    dicha conservación.
+  </p>
+
+  <div class="card">
+    <strong>Eliminar cuenta</strong>
+    <p>
+      Consulta la información y opciones disponibles en
+      <a href="delete-account.html">
+        Cuenta y eliminación de datos
+      </a>.
+    </p>
+  </div>
+
+  <h2>7. Seguridad</h2>
+
+  <p>
+    Steady EP utiliza medidas técnicas y organizativas destinadas
+    a proteger la información frente a acceso, alteración,
+    utilización o divulgación no autorizados.
+  </p>
+
+  <p>
+    Sin embargo, ningún sistema electrónico de almacenamiento,
+    procesamiento o transmisión puede garantizar una seguridad
+    absoluta.
+  </p>
+
+  <h2>8. Menores de edad</h2>
+
+  <p>
+    Steady EP debe utilizarse de conformidad con los requisitos
+    de edad y las leyes aplicables.
+  </p>
+
+  <p>
+    Podemos adoptar medidas adicionales cuando sean necesarias
+    para proteger a usuarios menores de edad y limitar determinadas
+    funciones cuando corresponda.
+  </p>
+
+  <p>
+    Las Normas de la Comunidad incluyen medidas específicas
+    relacionadas con la protección de menores y contenido que
+    pueda ponerlos en riesgo.
+  </p>
+
+  <h2>9. Derechos y opciones del usuario</h2>
+
+  <p>
+    Dependiendo de tu ubicación y de la legislación aplicable,
+    puedes disponer de determinados derechos relacionados con
+    tu información personal.
+  </p>
+
+  <p>
+    Estos pueden incluir, cuando corresponda, solicitar acceso,
+    corrección o eliminación de determinada información y ejercer
+    otras opciones reconocidas por la legislación aplicable.
+  </p>
+
+  <p>
+    También puedes administrar determinados permisos mediante
+    la configuración de tu dispositivo.
+  </p>
+
+  <h2>10. Notificaciones</h2>
+
+  <p>
+    Steady EP puede enviar notificaciones relacionadas con
+    actividades, recordatorios, interacciones u otras funciones
+    del servicio cuando las notificaciones estén habilitadas.
+  </p>
+
+  <p>
+    Puedes administrar los permisos de notificaciones desde
+    la configuración correspondiente de tu dispositivo.
+  </p>
+
+  <h2>11. Transferencias y procesamiento</h2>
+
+  <p>
+    Los proveedores utilizados para operar Steady EP pueden
+    mantener infraestructura en diferentes ubicaciones.
+    Como resultado, la información puede ser procesada en
+    jurisdicciones distintas a aquella en la que se encuentra
+    el usuario, de conformidad con los mecanismos y requisitos
+    legales aplicables.
+  </p>
+
+  <h2>12. Cambios a esta Política</h2>
+
+  <p>
+    Podemos actualizar esta Política de Privacidad para reflejar
+    cambios en Steady EP, nuestras prácticas, proveedores o
+    requisitos legales.
+  </p>
+
+  <p>
+    Cuando existan cambios relevantes, podremos comunicarlo
+    mediante Steady EP, esta página u otros medios disponibles.
+  </p>
+
+  <p>
+    La versión vigente se identificará mediante su fecha de
+    actualización.
+  </p>
+
+  <h2>13. Documentos relacionados</h2>
+
+  <p>
+    Esta Política debe consultarse junto con los
+    <a href="terms.html">Términos de Uso</a> y las
+    <a href="community-guidelines.html">
+      Normas de la Comunidad
+    </a>.
+  </p>
+
+  <h2>14. Contacto</h2>
+
+  <div class="card">
+    <p>
+      Para preguntas o solicitudes relacionadas con privacidad,
+      protección de datos o esta Política puedes contactar a:
     </p>
 
     <p>
-      Esta Política de Privacidad explica cómo Steady EP recopila,
-      utiliza, almacena y protege información cuando utilizas nuestra
-      aplicación y servicios relacionados.
+      <strong>Steady EP</strong><br>
+      Correo:
+      <a href="mailto:steadyep@gmail.com">
+        steadyep@gmail.com
+      </a>
     </p>
+  </div>
 
-    <h2>1. Información que podemos recopilar</h2>
+</main>
 
-    <p>
-      Dependiendo de las funciones que utilices, Steady EP puede
-      procesar información como:
-    </p>
+<footer>
+  <div class="container">
+    © 2026 Steady EP · Política de Privacidad · Versión 1.0
+  </div>
+</footer>
 
-    <ul>
-      <li>
-        Información de cuenta y perfil, como nombre, nombre de usuario,
-        correo electrónico, foto de perfil y portada.
-      </li>
-
-      <li>
-        Información proporcionada durante el registro, como país o
-        región, fecha de nacimiento, número de teléfono cuando se
-        proporcione y respuestas opcionales del registro.
-      </li>
-
-      <li>
-        Contenido creado por el usuario, como publicaciones,
-        fotografías, videos, comentarios, historias, notas y otros
-        contenidos compartidos.
-      </li>
-
-      <li>
-        Información social, como seguidores, cuentas seguidas,
-        solicitudes, likes, comentarios, guardados y otras
-        interacciones.
-      </li>
-
-      <li>
-        Mensajes y contenido enviado mediante las funciones de
-        comunicación de la aplicación.
-      </li>
-
-      <li>
-        Información de metas, agenda, actividades, progreso,
-        rachas y otros datos que el usuario decida registrar
-        en Steady EP.
-      </li>
-
-      <li>
-        Archivos multimedia, cámara o contenido del dispositivo
-        cuando el usuario concede permiso y utiliza funciones que
-        lo requieren.
-      </li>
-
-      <li>
-        Información técnica necesaria para operar, proteger y
-        mejorar el servicio.
-      </li>
-    </ul>
-
-    <h2>2. Cómo utilizamos la información</h2>
-
-    <p>Podemos utilizar la información para:</p>
-
-    <ul>
-      <li>Crear y administrar cuentas.</li>
-
-      <li>Proporcionar las funciones de Steady EP.</li>
-
-      <li>Guardar y sincronizar contenido y progreso.</li>
-
-      <li>Permitir funciones sociales y de comunicación.</li>
-
-      <li>
-        Enviar notificaciones y recordatorios solicitados o
-        relacionados con el servicio.
-      </li>
-
-      <li>
-        Prevenir abuso, fraude y usos que puedan afectar la
-        seguridad de los usuarios.
-      </li>
-
-      <li>
-        Gestionar reportes, bloqueos y otras herramientas
-        de seguridad.
-      </li>
-
-      <li>
-        Mantener, diagnosticar y mejorar el funcionamiento
-        de la aplicación.
-      </li>
-
-      <li>Cumplir obligaciones legales aplicables.</li>
-    </ul>
-
-    <h2>3. Contenido y privacidad</h2>
-
-    <p>
-      Algunas funciones permiten compartir contenido con otras
-      personas. La visibilidad depende de las opciones de privacidad
-      disponibles y de las elecciones realizadas por el usuario.
-      No todo el contenido almacenado en Steady EP es necesariamente
-      público.
-    </p>
-
-    <h2>4. Proveedores de servicios</h2>
-
-    <p>
-      Steady EP puede utilizar proveedores tecnológicos para funciones
-      como autenticación, base de datos, almacenamiento,
-      infraestructura, notificaciones y otros servicios necesarios
-      para operar la aplicación.
-    </p>
-
-    <p>
-      Estos proveedores pueden procesar información en relación con
-      la prestación de dichos servicios y de acuerdo con sus
-      obligaciones aplicables.
-    </p>
-
-    <h2>5. Conservación de datos</h2>
-
-    <p>
-      Conservamos la información durante el tiempo necesario para
-      proporcionar el servicio, mantener la seguridad, cumplir
-      obligaciones legales y resolver disputas.
-    </p>
-
-    <p>
-      Los periodos concretos pueden variar según el tipo de
-      información y la finalidad para la que se procesa.
-    </p>
-
-    <h2>6. Eliminación de cuenta y datos</h2>
-
-    <p>
-      Los usuarios pueden iniciar o solicitar la eliminación de su
-      cuenta mediante las opciones disponibles en Steady EP.
-    </p>
-
-    <p>
-      Cuando se procesa una eliminación, los datos asociados se
-      eliminan o se conservan únicamente cuando exista una razón
-      legítima o una obligación legal que requiera su conservación.
-    </p>
-
-    <h2>7. Seguridad</h2>
-
-    <p>
-      Utilizamos medidas técnicas y organizativas destinadas a
-      proteger la información contra acceso, uso, modificación o
-      divulgación no autorizados.
-    </p>
-
-    <p>
-      Ningún sistema de almacenamiento o transmisión electrónica
-      puede garantizar seguridad absoluta.
-    </p>
-
-    <h2>8. Menores de edad</h2>
-
-    <p>
-      Steady EP debe utilizarse de acuerdo con los requisitos de edad
-      y las leyes aplicables. Podemos adoptar medidas adicionales
-      cuando sean necesarias para proteger a usuarios menores de edad.
-    </p>
-
-    <h2>9. Cambios a esta política</h2>
-
-    <p>
-      Podemos actualizar esta Política de Privacidad cuando cambien
-      nuestras funciones, prácticas o requisitos legales.
-    </p>
-
-    <p>
-      La versión vigente se publicará en esta página junto con su
-      fecha de actualización.
-    </p>
-
-    <h2>10. Contacto</h2>
-
-    <div class="card">
-      <p>
-        Para preguntas o solicitudes relacionadas con privacidad
-        y datos personales, puedes contactar a Steady EP en:
-      </p>
-
-      <p>
-        <strong>Correo electrónico:</strong>
-        <a href="mailto:steadyep@gmail.com">
-          steadyep@gmail.com
-        </a>
-      </p>
-    </div>
-  </main>
 </body>
 </html>
