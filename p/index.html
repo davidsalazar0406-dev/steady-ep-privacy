@@ -90,14 +90,27 @@
     const notice = document.getElementById('notice');
 
     if (valid) {
-      const appUrl = 'steadyep:///post/' + encodeURIComponent(id);
+      const appUrl =
+        'steadyep:///post/' + encodeURIComponent(id);
 
-      button.href = appUrl;
+      const androidIntent =
+        'intent:///post/' + encodeURIComponent(id) +
+        '#Intent;' +
+        'scheme=steadyep;' +
+        'package=com.david_salazar.lifeOS;' +
+        'action=android.intent.action.VIEW;' +
+        'category=android.intent.category.BROWSABLE;' +
+        'end';
+
+      const isAndroid = /Android/i.test(navigator.userAgent);
+
+      button.href = isAndroid ? androidIntent : appUrl;
 
       button.addEventListener('click', () => {
         notice.textContent =
           'Si Steady EP no se abre, verifica que tengas instalada la versión más reciente de la aplicación.';
       });
+
     } else {
       button.removeAttribute('href');
       button.style.opacity = '0.5';
